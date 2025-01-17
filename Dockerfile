@@ -90,7 +90,7 @@ ENV PUPPETEER_SKIP_DOWNLOAD=True
 # https://github.com/devlikeapro/waha/issues/347
 ENV NODE_OPTIONS="--max-old-space-size=16384"
 ARG USE_BROWSER=chromium
-ARG WHATSAPP_DEFAULT_ENGINE
+ARG WHATSAPP_DEFAULT_ENGINE=NOWEB
 
 RUN echo "USE_BROWSER=$USE_BROWSER"
 
@@ -159,6 +159,8 @@ RUN  apt-get update \
 
 # Set the ENV for docker image
 ENV WHATSAPP_DEFAULT_ENGINE=$WHATSAPP_DEFAULT_ENGINE
+ENV WHATSAPP_SWAGGER_USERNAME=waha
+ENV WHATSAPP_SWAGGER_PASSWORD=waha
 
 # Attach sources, install packages
 WORKDIR /app
